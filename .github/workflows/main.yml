@@ -1,0 +1,309 @@
+openapi: 3.0.0
+info:
+  title: flows Mitmproxy2Swagger
+  version: 1.0.0
+servers:
+- url: https://cloud.digitalocean.com
+  description: The default server
+paths:
+  /api/v1/users:
+    get:
+      summary: GET users
+      responses:
+        '200':
+          description: OK
+          content: {}
+  /api/v1/users/2769d82c-a24f-478e-b1f3-14958685e2f4:
+    get:
+      summary: GET 2769d82c-a24f-478e-b1f3-14958685e2f4
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      uuid:
+                        type: string
+                      email:
+                        type: string
+                      name:
+                        type: string
+                      location:
+                        type: object
+                      phone_number:
+                        type: object
+                      droplet_limit:
+                        type: number
+                      onboarding_step:
+                        type: string
+                      newsletter_subscribed:
+                        type: number
+                      balance:
+                        type: string
+                      credit:
+                        type: string
+                      usage_total:
+                        type: string
+                      droplet_count:
+                        type: number
+                      can_be_deleted:
+                        type: number
+                      in_bad_standing:
+                        type: number
+                      status:
+                        type: string
+                      tfa_enabled:
+                        type: number
+                      avatar:
+                        type: string
+                      is_hold:
+                        type: number
+                      is_verified:
+                        type: number
+                      is_partner:
+                        type: number
+                      is_vendor:
+                        type: number
+                      is_paypal:
+                        type: number
+                      onboarding_origin:
+                        type: object
+                      payment_method:
+                        type: string
+                      nav_message:
+                        type: string
+                      created_at:
+                        type: string
+                      company:
+                        type: object
+                      two_factor_methods:
+                        type: object
+                        properties: {}
+                      has_secure_login:
+                        type: number
+                      is_trial:
+                        type: number
+                      authn_type:
+                        type: string
+                      team_limit:
+                        type: number
+                      credits:
+                        type: array
+                        items: {}
+                      bank_machine_result:
+                        type: object
+                      organizations:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            uuid:
+                              type: string
+                            contact_email:
+                              type: string
+                            email_confirmed_at:
+                              type: string
+                            email_verified_at:
+                              type: string
+                            name:
+                              type: string
+                            slug:
+                              type: string
+                            location:
+                              type: object
+                            phone_number:
+                              type: object
+                            droplet_limit:
+                              type: number
+                            onboarding_step:
+                              type: string
+                            newsletter_subscribed:
+                              type: number
+                            balance:
+                              type: string
+                            usage_total:
+                              type: string
+                            droplet_count:
+                              type: number
+                            can_be_deleted:
+                              type: number
+                            in_bad_standing:
+                              type: number
+                            status:
+                              type: string
+                            avatar_initials:
+                              type: string
+                            avatar_color:
+                              type: number
+                            tfa_enabled:
+                              type: number
+                            is_archived:
+                              type: number
+                            is_hold:
+                              type: number
+                            is_verified:
+                              type: number
+                            is_paypal:
+                              type: number
+                            is_partner:
+                              type: number
+                            is_wire_transfer_eligible:
+                              type: number
+                            requires_secure_login:
+                              type: number
+                            payment_method:
+                              type: string
+                            company:
+                              type: object
+                            is_trial:
+                              type: number
+                            role:
+                              type: string
+                            subject_role:
+                              type: object
+                              properties:
+                                uuid:
+                                  type: string
+                                name:
+                                  type: string
+                                description:
+                                  type: string
+                            converted_personal_account:
+                              type: number
+                            is_ach_debit_eligible:
+                              type: number
+                            is_achwire_only:
+                              type: number
+                            payment_terms:
+                              type: string
+                      current_context_id:
+                        type: string
+                      current_context_urn:
+                        type: string
+                      salesforce_enabled:
+                        type: number
+                      requires_review:
+                        type: number
+                      email_confirmed_at:
+                        type: string
+                      login_email_token_expires_at:
+                        type: object
+                      teamsv3_enabled:
+                        type: number
+                      default_team_urn:
+                        type: string
+  /api/v2/billing/{id}/dunning_message:
+    get:
+      summary: GET dunning_message by id
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  min_payment_required:
+                    type: string
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+  /api/v1/incidents:
+    get:
+      summary: GET incidents
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  incidents:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        name:
+                          type: string
+                        created_at:
+                          type: string
+                        incident_updates:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                              body:
+                                type: string
+                              created_at:
+                                type: string
+                              updated_at:
+                                type: string
+                              affected_components:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    code:
+                                      type: string
+                                    name:
+                                      type: string
+                        shortlink:
+                          type: string
+                        regions:
+                          type: object
+  /api/v1/permissions/instrument:
+    post:
+      summary: POST instrument
+      responses:
+        '200':
+          description: OK
+          content: {}
+      parameters:
+      - name: i
+        in: query
+        required: false
+        schema:
+          type: number
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                events:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      permission:
+                        type: string
+                      resolved:
+                        type: number
+x-path-templates:
+# Remove the ignore: prefix to generate an endpoint with its URL
+# Lines that are closer to the top take precedence, the matching is greedy
+- /api/v2/billing/18268766/dunning_message
+- ignore:/graphql
+- ignore:/graphql/public
+- ignore:/graphql/public/login
+- ignore:/login
+- ignore:/logout
+- ignore:/projects
+- ignore:/ws-auth
