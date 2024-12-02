@@ -1,0 +1,8 @@
+app:
+  applicationId: 2e5a48e5-9e26-46e0-a70e-dc9bb08eb770 # (required)
+  env: Development # (required)
+  host: https://app.stackhawk.com/scans # (required)
+  riskLevel: CRITICAL # (optional)
+  appDataType: PII # (optional)
+hawk:
+  failureThreshold: critical
