@@ -1,0 +1,6 @@
+app:
+  applicationId: 21973675-6aa9-4f33-83eb-89895f60ef7d # (required)
+  env: Development # (required)
+  host: https://localohodt:3000 # (required)
+hawk:
+  failureThreshold: critical
